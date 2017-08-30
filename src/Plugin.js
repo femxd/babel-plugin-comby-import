@@ -60,8 +60,13 @@ export default class Plugin {
       const path = winPath(
         this.customName ? this.customName(transformedMethodName) : join(this.libraryName, libraryDirectory, transformedMethodName, this.fileName) // eslint-disable-line
       );
-      const stylePath = winPath(
-        this.styleLibraryName ? join(this.styleLibraryName, this.styleDirectory, transformedMethodName, this.fileName) : (this.styleLibraryPath ? join(this.styleLibraryPath, transformedMethodName) : path));
+      let stylePath = path;
+      if (this.styleLibraryName) {
+        stylePath = winPath(
+          join(this.styleLibraryName, this.styleDirectory, transformedMethodName, this.fileName));
+      } else if (this.styleLibraryPath) {
+        stylePath = winPath(join(this.styleLibraryPath, transformedMethodName));
+      }
       this.selectedMethods[methodName] = file.addImport(path, 'default');
       if (style === true) {
         file.addImport(`${stylePath}/style`, 'style');
