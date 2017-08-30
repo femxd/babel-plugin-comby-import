@@ -19,7 +19,8 @@
   ],
   "keywords": [
     "babel-plugin",
-    "antd"
+    "comby",
+    "auto import"
   ],
   "author": "perfey",
   "license": "MIT",
