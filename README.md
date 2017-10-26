@@ -12,9 +12,9 @@ npm install babel-plugin-comby-import --save-dev
 
 Via `.babelrc` or babel-loader.
 
-```js
+```javascript
 {
-  "plugins": [["import", options]]
+  "plugins": [["comby-import", options]]
 }
 ```
 
