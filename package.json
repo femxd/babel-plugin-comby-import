@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-comby-import",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Component modular import plugin for babel.",
   "repository": {
     "type": "git",
